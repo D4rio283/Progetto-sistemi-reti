@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Documentazione Progetto HEADER}
+\author{Dridi Dario \and Marianelli Manuele \and Testi Guido}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Presentazione}
+Il nostro algoritmo legge dal file \texttt{msg.txt} il messaggio e lo memorizza in una variabile di tipo stringa nel \texttt{main}; ogni carattere della stringa viene inviato come parametro alla funzione di conversione in binario che restituisce la conversione in binario della lettera passata; ogni conversione di ogni lettera viene aggiunta a un’altra variabile che successivamente sarà scritta nel file \texttt{frame.txt}. Inoltre abbiamo dichiarato una \texttt{struct} con tutti i campi dell’header IP e in un’altra procedura li abbiamo impostati.
+
+\section{File del progetto}
+\subsection{main.cpp}
+All’interno del file \texttt{main.cpp} è presente esclusivamente l’inclusione delle librerie e il codice all’interno del \texttt{main}; qui sono presenti le dichiarazioni dei parametri attuali e le chiamate di funzioni e procedure. Per la conversione del messaggio in binario abbiamo memorizzato l’intera riga in \texttt{msg.txt} in una stringa e poi abbiamo chiamato la funzione di conversione per ogni carattere della stringa.
+
+\subsection{funzioni.cpp}
+All’interno del file \texttt{funzioni.cpp} è presente il corpo di tutte le funzioni, procedure utilizzate e l’attuale \texttt{struct} utilizzata.
+
+\subsection{funzioni.h}
+All’interno del file \texttt{funzioni.h} sono presenti i prototipi delle funzioni e procedure (scritte in \texttt{funzioni.cpp}) e la dichiarazione della \texttt{struct IpHeader} con tutti i campi.
+
+\subsection{msg.txt}
+All’interno del file \texttt{msg.txt} è presente il messaggio di partenza del mittente.
+
+\subsection{frame.txt}
+All’interno del file \texttt{frame.txt} è presente la conversione in binario del messaggio scritto in \texttt{msg.txt}.
+
+\end{document}
