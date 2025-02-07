@@ -26,6 +26,7 @@ int main(){
     IpHeader header;
     
     crea_Datagram(header);
+    cout<<bin;
     
     return 0;
 }
