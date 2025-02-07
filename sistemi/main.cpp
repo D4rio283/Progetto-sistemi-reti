@@ -27,10 +27,10 @@ int main(){
     ethernetHeader header2;
     
 
-    crea_Datagram(header);
+    crea_Datagram(header,bin);
     cout<<bin;
 
-    crea_Frame(header,
+    crea_Frame(header);
 
     
     return 0;
