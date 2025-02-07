@@ -21,8 +21,7 @@ int main(){
         bin+=char_to_bin(parola[i]);
     }
     
-    //chiamo la procedura scrittura passando la variabile bin
-    scrittura_Messaggio(bin);
+    
     
     //creo una variabile di tipo struct
     IpHeader header;
@@ -33,6 +32,10 @@ int main(){
     cout<<bin;
 
     risultato_finale=crea_Frame(header,risultato_ip);
+
+    //chiamo la procedura scrittura passando la variabile risultato_finale
+    scrittura_Messaggio(risultato_finale);
+
 
     
     return 0;
