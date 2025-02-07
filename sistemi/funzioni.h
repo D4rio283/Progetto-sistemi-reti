@@ -20,6 +20,17 @@ struct IpHeader{
     string padding;
 };
 
+struct ethernetHeader{
+    string preamble;
+    string SFD;
+    string DST;
+    string SRC;
+    string type;
+    string data;
+    string FCS;
+};
+
+
 string leggi_Messaggio();
 void scrittura_Messaggio(string messaggio);
 string char_to_bin(char lettera);
