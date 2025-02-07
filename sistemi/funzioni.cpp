@@ -62,7 +62,7 @@ string crea_Datagram(IpHeader &header,string bin){
     header.S_IP_address= "11000000101010000000000100001010";
     header.D_IP_address= "00001000000010000000000000001000";
     
-    risultato= bin+ header.version+header.HLEN+header.TOS+header.total_lenght+header.identification+header.flags+header.fragment_offset+header.time_to_live+header.protocol+header.S_IP_address+header.D_IP_address;
+    risultato= header.version+header.HLEN+header.TOS+header.total_lenght+header.identification+header.flags+header.fragment_offset+header.time_to_live+header.protocol+header.S_IP_address+header.D_IP_address+bin;
     return risultato;
 }
 
