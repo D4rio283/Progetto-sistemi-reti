@@ -16,8 +16,8 @@ struct IpHeader{
     string header_checksum;
     string S_IP_address;
     string D_IP_address;
-    //string option;
-    //string padding;
+    string option;
+    string padding;
 };
 
 struct ethernetHeader{
