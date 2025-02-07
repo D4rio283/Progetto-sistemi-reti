@@ -6,7 +6,7 @@
 #include"funzioni.h"
 using namespace std;
 
-//manca funzione e prototipo di checksum e CRC
+//manca funzione e prototipo di checksum e CRC, diego
 
 int main(){
     //dichiaro due variabili di tipo string e a parola gli assegno cio' che e' scritto in msg.txt
