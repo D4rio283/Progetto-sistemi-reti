@@ -12,6 +12,7 @@ int main(){
     //dichiaro due variabili di tipo string e a parola gli assegno cio' che e' scritto in msg.txt
     string parola= leggi_Messaggio();
     string bin= "";
+    string risultato_ip="";
     
     //ogni lettera del messaggio viene passata alla funzione che restituisce la sua conversione in binario
     for(int i= 0; i<parola.size(); i++){
@@ -26,8 +27,8 @@ int main(){
     IpHeader header;
     ethernetHeader header2;
     
-
-    crea_Datagram(header,bin);
+    
+    risultato_ip= crea_Datagram(header,bin);
     cout<<bin;
 
     crea_Frame(header);
