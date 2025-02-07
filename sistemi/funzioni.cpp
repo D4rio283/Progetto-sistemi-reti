@@ -29,7 +29,7 @@ string leggi_Messaggio(){
 
 
 void scrittura_Messaggio(string messaggio){
-    //apro lo stream col file
+    //apro lo stream con il file
     ofstream fout("frame.txt");
     
     //se c'e' un errore nell'apertura lo comunico all'utente e torno al main
