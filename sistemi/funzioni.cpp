@@ -129,14 +129,15 @@ string string_to_bin(char lettera){
     return risultato;
 }
 
-void crea_Frame(ethernetHeader &header){
-    preamble="1010101010101010101010101010101010101010101010101010101010101010";
-    SFD="11010101"
-    DST="101011111010111110101111101011111010111110101111"
-    SRC="101011001010111110101101101011001010011010101110"
-    type="10000000000000000"
-    data=""
-    FCS=""
-    
+void crea_Frame(ethernetHeader &header2,string risultato_ip){
+    string risultato_totale="";
+    header2.preamble="1010101010101010101010101010101010101010101010101010101010101010";
+    header2.SFD="11010101";
+    header2.DST="101011111010111110101111101011111010111110101111";
+    header2.SRC="101011001010111110101101101011001010011010101110";
+    header2.type="10000000000000000";
+    header2.FCS="";
+    risultato_totale=header2.preamble+header2.SFD+header2.DST+header2.SRC+header2.type+risultato_ip+header2.FCS;
+    return risultato_totale;
    
 }
