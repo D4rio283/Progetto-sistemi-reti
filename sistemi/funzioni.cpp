@@ -1,4 +1,4 @@
-#include<iostream>
+\#include<iostream>
 #include<string>
 #include<algorithm>
 #include"funzioni.h"
@@ -65,7 +65,7 @@ string crea_Datagram(IpHeader &header,string bin){
     risultato_parziale= header.version+header.HLEN+header.TOS+header.total_lenght+header.identification+header.flags+header.fragment_offset+header.time_to_live+header.protocol+header.S_IP_address+header.D_IP_address;
     header.header_checksum= ipChecksum(risultato_parziale);
     
-    risultato= header.version+header.HLEN+header.TOS+header.total_lenght+header.identification+header.flags+header.fragment_offset+header.time_to_live+header.protocol+header.S_IP_address+header.D_IP_address+bin;
+    risultato= header.version+header.HLEN+header.TOS+header.total_lenght+header.identification+header.flags+header.fragment_offset+header.time_to_live+header.protocol+header.header_checksum+header.S_IP_address+header.D_IP_address+bin;
     return risultato;
 }
 
