@@ -13,6 +13,7 @@ int main(){
     string parola= leggi_Messaggio();
     string bin= "";
     string risultato_ip="";
+    string risultato_finale="";
     
     //ogni lettera del messaggio viene passata alla funzione che restituisce la sua conversione in binario
     for(int i= 0; i<parola.size(); i++){
@@ -31,7 +32,7 @@ int main(){
     risultato_ip= crea_Datagram(header,bin);
     cout<<bin;
 
-    crea_Frame(header,risultato_ip);
+    risultato_finale=crea_Frame(header,risultato_ip);
 
     
     return 0;
