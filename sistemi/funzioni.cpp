@@ -42,25 +42,23 @@ void scrittura_Messaggio(string messaggio){
 
 
 void crea_Datagram(IpHeader &header){
-    header.version= 4;
-    header.HLEN= 10;
+    header.version= "0100";
+    header.HLEN= "0101";
     
     //priorita'� 4, delay 1, trhoughput 0, reliability 1, monetary cost 0 (ultimo di completamento)
-    header.TOS= 148;
+    header.TOS= "01100110";
     
-    header.total_lenght= 38070;
-    header.identification= 11569;
+    header.total_lenght= "0000000000111100";
+    header.identification= "1101010011110001";
 
     //3 bit  (il primo e' inutilizzato; il secondo se = 1 indica che il pacchetto non puo' essere frammentato)
-    header.flags= 2;
-    header.fragment_offset= 150;
-    header.time_to_live= 60;
-    header.protocol= 1;
-    header.header_checksum= 39843;
-    header.S_IP_address= 45344;
-    header.D_IP_address= 17817;
-    header.option= 56801;
-    header.padding= 12785;
+    header.flags= "010";
+    header.fragment_offset= "0000000000000";
+    header.time_to_live= "01000000";
+    header.protocol= "00000110";
+    //header.header_checksum= "";
+    header.S_IP_address= "11000000101010000000000100001010";
+    header.D_IP_address= "00001000000010000000000000001000";
 }
 
 
