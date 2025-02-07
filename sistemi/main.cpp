@@ -31,7 +31,7 @@ int main(){
     risultato_ip= crea_Datagram(header,bin);
     cout<<bin;
 
-    crea_Frame(header);
+    crea_Frame(header,risultato_ip);
 
     
     return 0;
