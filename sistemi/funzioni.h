@@ -36,6 +36,6 @@ void scrittura_Messaggio(string messaggio);
 string char_to_bin(char lettera);
 string string_to_bin(char lettera);
 string crea_Datagram(IpHeader &header);
-string crea_Frame(ethernetHeader header2);
+string crea_Frame(ethernetHeader header2,string risultato_ip);
 
 #endif	//serve a evitare inclusioni multiple
