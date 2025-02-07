@@ -24,9 +24,13 @@ int main(){
     
     //creo una variabile di tipo struct
     IpHeader header;
-    
+    ethernetHeader header2;
+
     crea_Datagram(header);
     cout<<bin;
+
+    crea_Frame(header,
+
     
     return 0;
 }
