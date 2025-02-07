@@ -4,20 +4,20 @@
 using namespace std;
 
 struct IpHeader{
-    int version;
-    int HLEN;
-    int TOS;
-    int total_lenght;
-    int identification;
-    int flags;
-    int fragment_offset;
-    int time_to_live;
-    int protocol;
-    int header_checksum;
-    int S_IP_address;
-    int D_IP_address;
-    int option;
-    int padding;
+    string version;
+    string HLEN;
+    string TOS;
+    string total_lenght;
+    string identification;
+    string flags;
+    string fragment_offset;
+    string time_to_live;
+    string protocol;
+    string header_checksum;
+    string S_IP_address;
+    string D_IP_address;
+    string option;
+    string padding;
 };
 
 string leggi_Messaggio();
