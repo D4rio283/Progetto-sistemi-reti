@@ -1,4 +1,4 @@
-\#include<iostream>
+#include<iostream>
 #include<string>
 #include<algorithm>
 #include"funzioni.h"
@@ -143,4 +143,17 @@ void crea_Frame(ethernetHeader &header2,string risultato_ip){
     risultato_totale=header2.preamble+header2.SFD+header2.DST+header2.SRC+header2.type+risultato_ip+header2.FCS;
     return risultato_totale;
    
+}
+
+unsigned short ipChecksum(string bits){
+    unsigned int sum = 0;
+    for (size_t i = 0; i < bits.size(); i += 16) {
+        unsigned short block = 0;
+        for (int j = 0; j < 16; j++) {
+            block = (block << 1) | (bits[i + j] - '0');
+        }
+        sum += block;
+        if (sum & 0x10000) sum = (sum & 0xFFFF) + 1;
+    }
+    return (unsigned short)(~sum & 0xFFFF);
 }
