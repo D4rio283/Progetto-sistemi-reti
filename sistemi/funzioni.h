@@ -37,5 +37,5 @@ string char_to_bin(char lettera);
 string string_to_bin(char lettera);
 string crea_Datagram(IpHeader &header);
 string crea_Frame(ethernetHeader header2,string risultato_ip);
-static unsigned short ipChecksum(string bits);
+unsigned short ipChecksum(string bits);
 #endif	//serve a evitare inclusioni multiple
