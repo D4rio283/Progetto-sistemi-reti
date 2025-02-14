@@ -139,7 +139,7 @@ void crea_Frame(ethernetHeader &header2,string risultato_ip){
     header2.DST="101011111010111110101111101011111010111110101111";
     header2.SRC="101011001010111110101101101011001010011010101110";
     header2.type="10000000000000000";
-    header2.FCS="";
+    header2.FCS=calcolaCRC(risultato_ip);
     risultato_totale=header2.preamble+header2.SFD+header2.DST+header2.SRC+header2.type+risultato_ip+header2.FCS;
     return risultato_totale;
    
