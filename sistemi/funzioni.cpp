@@ -157,3 +157,46 @@ unsigned short ipChecksum(string bits){
     }
     return (unsigned short)(~sum & 0xFFFF);
 }
+
+
+string calcolaCRC(const string &payload) {
+    unsigned short crc = 0xFFFF;  // Inizializzazione CRC a 0xFFFF
+    const unsigned short POLY = 0x1021;  // Polinomio CRC-16
+
+    // Loop attraverso ogni carattere del payload
+    for (unsigned char c : payload) {
+        crc ^= (c << 8);  // XOR con il byte corrente, spostato a sinistra di 8 bit
+        for (int i = 0; i < 8; i++) {  // Loop per i 8 bit
+            if (crc & 0x8000)  // Se il bit più significativo è 1
+                crc = (crc << 1) ^ POLY;  // Shift a sinistra e XOR con il polinomio
+            else
+                crc <<= 1;  // Solo shift a sinistra
+        }
+    }
+
+    // Converte CRC in esadecimale senza l'uso di sstream
+    string result = "";
+    for (int i = 12; i >= 0; i -= 4) {
+        unsigned char nibble = (crc >> i) & 0xF;  // Estrae ogni nibble (4 bit)
+        if (nibble < 10) {
+            result += (nibble + '0');  // Aggiungi cifra numerica
+        } else {
+            result += (nibble - 10 + 'A');  // Aggiungi lettera esadecimale (A-F)
+        }
+    }
+
+    return result;  // Restituisce il CRC come stringa esadecimale
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
