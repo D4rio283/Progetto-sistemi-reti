@@ -38,4 +38,5 @@ string string_to_bin(char lettera);
 string crea_Datagram(IpHeader &header);
 string crea_Frame(ethernetHeader header2,string risultato_ip);
 unsigned short ipChecksum(string bits);
+string calcolaCRC(const string &payload);
 #endif	//serve a evitare inclusioni multiple
