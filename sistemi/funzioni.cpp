@@ -174,7 +174,7 @@ string calcolaCRC(const string &payload) {
         }
     }
 
-    // Converte CRC in esadecimale senza l'uso di sstream
+    /* Converte CRC in esadecimale senza l'uso di sstream
     string result = "";
     for (int i = 12; i >= 0; i -= 4) {
         unsigned char nibble = (crc >> i) & 0xF;  // Estrae ogni nibble (4 bit)
@@ -184,7 +184,9 @@ string calcolaCRC(const string &payload) {
             result += (nibble - 10 + 'A');  // Aggiungi lettera esadecimale (A-F)
         }
     }
-
+    */
+    //mettere funzione int to bin
+    
     return result;  // Restituisce il CRC come stringa esadecimale
 }
 
