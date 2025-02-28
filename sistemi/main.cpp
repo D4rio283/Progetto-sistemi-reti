@@ -22,23 +22,20 @@ int main(){
     }
     
     
-    
+    //IN BIN � PRESENTE LA CONVERSIONE IN BINARIO DEL MESSAGGIO
     //creo una variabile di tipo struct
     IpHeader header;
     ethernetHeader header2;
     
-    
-    risultato_ip= crea_Datagram(header,bin);
-    cout<<bin;
-
-    risultato_finale=crea_Frame(header,risultato_ip);
+    //in risultato_ip ci va il datagramma (pacchetto)
+    risultato_ip= crea_Datagram(header, bin);
+	
+	//in risultato_finale ci va il frame (che comprende sia il datagram sia il frame; TUTTO)
+    risultato_finale=crea_Frame(header2,risultato_ip);
 
     //chiamo la procedura scrittura passando la variabile risultato_finale
     scrittura_Messaggio(risultato_finale);
 
-
-    
     return 0;
 }
-
 
