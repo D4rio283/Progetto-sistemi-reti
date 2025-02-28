@@ -1,6 +1,8 @@
 #ifndef FUNZIONI_H
 #define FUNZIONI_H
+#endif	//serve a evitare inclusioni multiple
 #include<string>
+
 using namespace std;
 
 struct IpHeader{
@@ -35,8 +37,7 @@ string leggi_Messaggio();
 void scrittura_Messaggio(string messaggio);
 string char_to_bin(char lettera);
 string string_to_bin(char lettera);
-string crea_Datagram(IpHeader &header);
-string crea_Frame(ethernetHeader header2,string risultato_ip);
+string crea_Datagram(IpHeader &header, string bin);
+string crea_Frame(ethernetHeader &header2,string risultato_ip);
 unsigned short ipChecksum(string bits);
 string calcolaCRC(const string &payload);
-#endif	//serve a evitare inclusioni multiple
