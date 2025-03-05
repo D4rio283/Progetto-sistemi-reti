@@ -174,21 +174,15 @@ string calcolaCRC(const string &payload) {
         }
     }
 
-    /* Converte CRC in esadecimale senza l'uso di sstream
+    // Converte il CRC in binario a 16 bit
     string result = "";
-    for (int i = 12; i >= 0; i -= 4) {
-        unsigned char nibble = (crc >> i) & 0xF;  // Estrae ogni nibble (4 bit)
-        if (nibble < 10) {
-            result += (nibble + '0');  // Aggiungi cifra numerica
-        } else {
-            result += (nibble - 10 + 'A');  // Aggiungi lettera esadecimale (A-F)
-        }
+    for (int i = 15; i >= 0; i--) {
+        result += (crc & (1 << i)) ? '1' : '0';  // Aggiungi '1' o '0' in base al valore del bit
     }
-    */
-    //mettere funzione int to bin
-    
-    return result;  // Restituisce il CRC come stringa esadecimale
+
+    return result;  // Restituisce il CRC come stringa binaria
 }
+
 
 
 
