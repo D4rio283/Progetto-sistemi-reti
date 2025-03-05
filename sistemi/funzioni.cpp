@@ -10,7 +10,7 @@ string leggi_Messaggio(){
     string riga;
     
     //apro lo stream col file
-    ifstream fin("C://Users//DRIDI.DARIO//Documents//projects//Project1//msg.txt");
+    ifstream fin("C://Users//Utente//Desktop//Project1//msg.txt"); // METTERE IL PERCORSO DI MSG.TXT
     
     //se c'e' un errore nell'apertura lo comunico all'utente e torno al main
     if(!fin){
@@ -30,7 +30,7 @@ string leggi_Messaggio(){
 
 void scrittura_Messaggio(string messaggio){
     //apro lo stream con il file
-    ofstream fout("C://Users//DRIDI.DARIO//Documents//projects//Project1//frame.txt");
+    ofstream fout("C://Users//Utente//Desktop//Project1//frame.txt"); //METTERE IL PERCORSO DI FRAME.TXT
     
     //se c'e' un errore nell'apertura lo comunico all'utente e torno al main
     if(!fout){
@@ -182,7 +182,6 @@ string calcolaCRC(const string &payload) {
 
     return result;  // Restituisce il CRC come stringa binaria
 }
-
 
 
 
